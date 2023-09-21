@@ -4,11 +4,10 @@ public class ProdutoTeste {
 
 	public static void main(String[] args) {
 		
-		Produto p1 = new Produto();
-		p1.nome = "Notebook";
-		p1.preco = 4000.00;
-		p1.desconto = 0.25;
-		
+		//usando contruitor com parâmetros definidos.
+		Produto p1 = new Produto("Notebook", 4000.00, 0.25 );
+				
+		//usando construtor padrão.
 		var p2 = new Produto();
 		p2.nome = "Celular";
 		p2.preco = 10000.00;
@@ -18,8 +17,11 @@ public class ProdutoTeste {
 		System.out.println(p1.nome);
 		System.out.println(p2.nome);
 		
-		double precoFinal1 = p1.preco * (1 - p1.desconto);
-		double precoFinal2 = p2.preco * (1 - p2.desconto);
+		// Utilizando o primeiro metodo;
+		double precoFinal1 = p1.precoComDesconto();
+		
+		// Segundo método com parametro diferente.
+		double precoFinal2 = p2.precoComDesconto(0.2);
 		
 		System.out.println(precoFinal1);
 		System.out.println(precoFinal2);
